@@ -19,6 +19,7 @@ function translator(plainText){
     document.getElementById("morseCode").innerHTML = text;
 }
 function decryption(morseCode){
+  document.getElementById("MCText").value = "";
    const morseCode2 = [
   //A       B      C       D      E     F     G
     ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.." , ".----", "..---", "...--", "....-", "....", "-....", "--...", "---..", "----.", "-----"]
@@ -31,15 +32,19 @@ function decryption(morseCode){
       if(morseCode[i] != " " ){
         MCode += morseCode[i];
       }else{
+        
         MCode += "";
         for(var j = 0; j < morseCode2.length; j++){
           if(MCode == morseCode2[j]){
             finalText += alphabet[j];
             MCode = "";
+            
           }
         }
+        
       }
       
     }
-document.getElementById("decrypt").innerHTML = finalText;
+document.getElementById("statement").innerHTML =  "\"" + morseCode + "\" in Plaintext is..."
+    document.getElementById("morseCode").innerHTML = finalText;
 }
