@@ -41,8 +41,12 @@ function decryption(morseCode){
             
           }
         }
+       
         
       }
+       if(morseCode[i] == " "){
+          finalText += " ";
+        }
       
     }
 document.getElementById("statement").innerHTML =  "\"" + morseCode + "\" in Plaintext is..."
